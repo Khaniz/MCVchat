@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration status="debug">
+
+    <Appenders>
+        <!-- 콘솔 -->
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd hh:mm:ss} %5p [%c] %m%n"/> <!--형식을 지정한다. [%클래스] %메서드%라인-->
+        </Console>
+    </Appenders>
+
+    <loggers>
+        <looger name="java.sql.preparedStatement" level="DEBUG" additivity="false">
+            <AppenderRef ref="console" />
+        </looger>
+
+        <looger name="java.sql.ResultSet" level="DEBUG" additivity="false">
+            <AppenderRef ref="console" />
+        </looger>
+
+        <root level="info" additivity="true">
+            <AppenderRef ref="console"/><!-- console 창에 기록해라 ref는 레퍼런스: 주소를 뜻한다. -->
+        </root>
+    </loggers>
+
+</configuration>
